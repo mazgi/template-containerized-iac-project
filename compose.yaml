@@ -28,3 +28,5 @@ services:
       - ~/.azure:/mnt/.azure:ro
       - ~/.config/gcloud:/mnt/.config/gcloud:ro
     working_dir: /work/iac
+    profiles:
+      - iac
