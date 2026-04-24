@@ -22,11 +22,11 @@ services:
       TF_VAR_google_tf_state_bucket: ${GOOGLE_TF_STATE_BUCKET}
       TF_VAR_base_domain_name: ${BASE_DOMAIN_NAME}
       TF_VAR_image_tag: ${IMAGE_TAG:-latest}
+    profiles:
+      - iac
     volumes:
       - .:/work
       - ~/.aws:/mnt/.aws:ro
       - ~/.azure:/mnt/.azure:ro
       - ~/.config/gcloud:/mnt/.config/gcloud:ro
     working_dir: /work/iac
-    profiles:
-      - iac
